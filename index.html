@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/img/logo.png">
+    <link rel="apple-touch-icon" href="/src/img/logo.png">
+    
+    <link rel="stylesheet" href="/src/style.css">
+
+    <title>Deluxe Perfumería | Decants Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+  </head>
+  <body>
+
+      <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">👑</div>
+            <div>
+                <h1>Deluxe Perfumería</h1>
+                <span>DECANTS PREMIUM</span>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="mainNav">
+            <a href="#inicio">Inicio</a>
+            <a href="#hombre">Hombre</a>
+            <a href="#mujer">Mujer</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="cart-btn" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Cotización</span>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2>✨ Fragancias de Lujo ✨</h2>
+            <p>Descubre nuestra exclusiva colección de decants de los perfumes más codiciados del mundo. 
+               Calidad premium al mejor precio.</p>
+            
+            <div class="price-info">
+                <div class="price-badge">
+                    <div class="size">10 ml</div>
+                    <div class="price">S/ 30.00</div>
+                </div>
+                <div class="price-badge">
+                    <div class="size">30 ml</div>
+                    <div class="price">S/ 85.00</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#hombre" class="btn btn-men">
+                    <i class="fas fa-mars"></i> Colección Hombre
+                </a>
+                <a href="#mujer" class="btn btn-women">
+                    <i class="fas fa-venus"></i> Colección Mujer
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         SECCIÓN HOMBRES
+         
+         📌 PARA MARCAR UN PERFUME COMO AGOTADO:
+         Agrega la clase "agotado" al div del producto.
+         
+         Ejemplo:
+         DISPONIBLE: <div class="product-card">
+         AGOTADO:    <div class="product-card agotado">
+    ================================================ -->
+    <section class="section section-men" id="hombre">
+        <div class="section-title">
+            <h2><i class="fas fa-user-tie"></i> PERFUMES PARA HOMBRE <i class="fas fa-user-tie"></i></h2>
+            <p>Fragancias sofisticadas para el caballero moderno</p>
+        </div>
+        <div class="products-grid">
+            
+            <!-- ========== ONE MILLION LUCKY - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Bestseller</span>
+                    <img src="/src/img/one million lucky.png" alt="One Million Lucky" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Paco Rabanne</p>
+                    <h3 class="product-name">One Million Lucky</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Sádico</span>
+                        <span class="product-tag">Cítrico</span>
+                        <span class="product-tag">Masculino</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('One Million Lucky', 'Paco Rabanne', 30, '10ml', 'hombre' , '/src/img/one million lucky.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('One Million Lucky', 'Paco Rabanne', 85, '30ml', 'hombre', '/src/img/one million lucky.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('One Million Lucky', 'Paco Rabanne')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <!-- Mensaje que aparece cuando está agotado -->
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('One Million Lucky', 'Paco Rabanne')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== LE MALE ELIXIR - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Premium</span>
+                    <img src="/src/img/le male elixir.png" alt="Le Male Elixir" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Jean Paul Gaultier</p>
+                    <h3 class="product-name">Le Male Elixir</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Exótico</span>
+                        <span class="product-tag">Fruity</span>
+                        <span class="product-tag">Sensual</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Le Male Elixir', 'Jean Paul Gaultier', 30, '10ml', 'hombre', '/src/img/le male elixir.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Le Male Elixir', 'Jean Paul Gaultier', 85, '30ml', 'hombre', '/src/img/le male elixir.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Le Male Elixir', 'Jean Paul Gaultier')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Le Male Elixir', 'Jean Paul Gaultier')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== INVICTUS VICTORY ELIXIR - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Nuevo</span>
+                    <img src="/src/img/invictus victory elixir.png" alt="Invictus Victory Elixir" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Paco Rabanne</p>
+                    <h3 class="product-name">Invictus Victory Elixir</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Intenso</span>
+                        <span class="product-tag">Aromático</span>
+                        <span class="product-tag">Masculino</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Invictus Victory Elixir', 'Paco Rabanne', 30, '10ml', 'hombre', '/src/img/invictus victory elixir.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Invictus Victory Elixir', 'Paco Rabanne', 85, '30ml', 'hombre', '/src/img/invictus victory elixir.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Invictus Victory Elixir', 'Paco Rabanne')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Invictus Victory Elixir', 'Paco Rabanne')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== ERBA PURA - EJEMPLO DE AGOTADO ========== -->
+            <!-- 👇 NOTA: Este tiene "agotado" en la clase para mostrar ejemplo -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Luxury</span>
+                    <img src="/src/img/Erba-Pura.png" alt="Erba Pura" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Xerjoff</p>
+                    <h3 class="product-name">Erba Pura</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Limpio</span>
+                        <span class="product-tag">Armonioso</span>
+                        <span class="product-tag">Masculino</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Erba Pura', 'Xerjoff', 30, '10ml', 'hombre', '/src/img/Erba-Pura.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Erba Pura', 'Xerjoff', 85, '30ml', 'hombre', '/src/img/Erba-Pura.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Erba Pura', 'Xerjoff')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Erba Pura', 'Xerjoff')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 9 PM - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Popular</span>
+                    <img src="/src/img/9 pm.png" alt="9 PM" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Afnan</p>
+                    <h3 class="product-name">9 PM</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Clásico</span>
+                        <span class="product-tag">Fresh</span>
+                        <span class="product-tag">Finesa</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('9 PM', 'Afnan', 30, '10ml', 'hombre', '/src/img/9 pm.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('9 PM', 'Afnan', 85, '30ml', 'hombre', '/src/img/9 pm.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('9 PM', 'Afnan')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('9 PM', 'Afnan')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== KHAMRAH - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Exótico</span>
+                    <img src="/src/img/khamrah.png" alt="Khamrah" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa</p>
+                    <h3 class="product-name">Khamrah</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Simbólica</span>
+                        <span class="product-tag">Amber</span>
+                        <span class="product-tag">Exótica</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Khamrah', 'Lattafa', 30, '10ml', 'hombre', '/src/img/khamrah.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Khamrah', 'Lattafa', 85, '30ml', 'hombre', '/src/img/khamrah.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Khamrah', 'Lattafa')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Khamrah', 'Lattafa')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== VALENTINO - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Elegante</span>
+                    <img src="/src/img/Valentino Uomo.png" alt="Valentino Uomo" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Valentino</p>
+                    <h3 class="product-name">Valentino Uomo</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Elegante</span>
+                        <span class="product-tag">Sofisticado</span>
+                        <span class="product-tag">Premium</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Valentino Uomo', 'Valentino', 30, '10ml', 'hombre', '/src/img/Valentino Uomo.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Valentino Uomo', 'Valentino', 85, '30ml', 'hombre', '/src/img/Valentino Uomo.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Valentino Uomo', 'Valentino')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Valentino Uomo', 'Valentino')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         SECCIÓN MUJERES
+    ================================================ -->
+    <section class="section section-women" id="mujer">
+        <div class="section-title">
+            <h2><i class="fas fa-crown"></i> PERFUMES PARA MUJER <i class="fas fa-crown"></i></h2>
+            <p>Fragancias encantadoras para la mujer moderna</p>
+        </div>
+        <div class="products-grid">
+            
+            <!-- ========== GOOD GIRL SUPREME - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Bestseller</span>
+                    <img src="/src/img/Good Girl Supreme.png" alt="Good Girl Supreme" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Carolina Herrera</p>
+                    <h3 class="product-name">Good Girl Supreme</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Gourmand</span>
+                        <span class="product-tag">Floral</span>
+                        <span class="product-tag">Caprichosa</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Good Girl Supreme', 'Carolina Herrera', 30, '10ml', 'mujer', '/src/img/Good Girl Supreme.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Good Girl Supreme', 'Carolina Herrera', 85, '30ml', 'mujer', '/src/img/Good Girl Supreme.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Good Girl Supreme', 'Carolina Herrera')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Good Girl Supreme', 'Carolina Herrera')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== MY WAY - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Elegante</span>
+                    <img src="/src/img/My Way.png" alt="My Way" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Giorgio Armani</p>
+                    <h3 class="product-name">My Way</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Floral</span>
+                        <span class="product-tag">Intenso</span>
+                        <span class="product-tag">Exótico</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('My Way', 'Giorgio Armani', 30, '10ml', 'mujer', '/src/img/My Way.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('My Way', 'Giorgio Armani', 85, '30ml', 'mujer', '/src/img/My Way.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('My Way', 'Giorgio Armani')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('My Way', 'Giorgio Armani')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== YARA - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Popular</span>
+                    <img src="/src/img/Yara.png" alt="Yara" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa</p>
+                    <h3 class="product-name">Yara</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Gourmand</span>
+                        <span class="product-tag">Floral</span>
+                        <span class="product-tag">Maison</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Yara', 'Lattafa', 30, '10ml', 'mujer', '/src/img/Yara.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Yara', 'Lattafa', 85, '30ml', 'mujer', '/src/img/Yara.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Yara', 'Lattafa')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Yara', 'Lattafa')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SWEET LIKE CANDY - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Juvenil</span>
+                    <img src="/src/img/Sweet Like Candy.png" alt="Sweet Like Candy" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Ariana Grande</p>
+                    <h3 class="product-name">Sweet Like Candy</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Frutal</span>
+                        <span class="product-tag">Gourmand</span>
+                        <span class="product-tag">Moderno</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Sweet Like Candy', 'Ariana Grande', 30, '10ml', 'mujer', '/src/img/Sweet Like Candy.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Sweet Like Candy', 'Ariana Grande', 85, '30ml', 'mujer', '/src/img/Sweet Like Candy.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Sweet Like Candy', 'Ariana Grande')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Sweet Like Candy', 'Ariana Grande')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== CLASSIQUE - DISPONIBLE ========== -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Clásico</span>
+                    <img src="/src/img/Classique.png" alt="Classique" class="perfume-img">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Jean Paul Gaultier</p>
+                    <h3 class="product-name">Classique</h3>
+                    <div class="product-tags">
+                        <span class="product-tag">Intenso</span>
+                        <span class="product-tag">Floral</span>
+                        <span class="product-tag">Corazón</span>
+                    </div>
+                    <div class="order-options">
+                        <button class="order-btn order-btn-10ml" onclick="addToCart('Classique', 'Jean Paul Gaultier', 30, '10ml', 'mujer', '/src/img/Classique.png')">
+                            <span class="size-label">10 ml</span>
+                            <span class="price-label">S/ 30.00</span>
+                        </button>
+                        <button class="order-btn order-btn-30ml" onclick="addToCart('Classique', 'Jean Paul Gaultier', 85, '30ml', 'mujer', '/src/img/Classique.png')">
+                            <span class="size-label">30 ml</span>
+                            <span class="price-label">S/ 85.00</span>
+                        </button>
+                    </div>
+                    <button class="quick-order-btn" onclick="consultarDisponibilidad('Classique', 'Jean Paul Gaultier')">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                    </button>
+                    <div class="agotado-message">
+                        <p>😔 Producto temporalmente agotado</p>
+                        <button class="notify-btn" onclick="notificarRestock('Classique', 'Jean Paul Gaultier')">
+                            <i class="fab fa-whatsapp"></i> Avísame cuando llegue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="nosotros">
+        <div class="about-content">
+            <h2>¿Por qué elegir Deluxe Perfumería?</h2>
+            <p>Somos especialistas en decants de perfumes de alta gama. Ofrecemos la oportunidad de experimentar las fragancias más exclusivas del mundo en presentaciones accesibles.</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-gem"></i>
+                    <h3>100% Original</h3>
+                    <p>Todos nuestros decants provienen directamente de frascos originales de las marcas más prestigiosas.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Envío Seguro</h3>
+                    <p>Empacamos con cuidado cada pedido para garantizar que llegue en perfectas condiciones.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Atención Personalizada</h3>
+                    <p>Te asesoramos para encontrar la fragancia perfecta según tu estilo y personalidad.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tags"></i>
+                    <h3>Precios Accesibles</h3>
+                    <p>Prueba perfumes de lujo sin gastar una fortuna. Ideal para descubrir nuevas fragancias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="contact-container">
+            <h2>¿Listo para ordenar?</h2>
+            <p>Contáctanos por WhatsApp para hacer tu pedido o resolver cualquier duda</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/51923580692?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20sus%20decants%20de%20perfumes" class="contact-btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://instagram.com/deluxeperfumeria" class="contact-btn instagram-btn" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Deluxe Perfumería</h4>
+                <p>Tu destino para decants de perfumes premium. Experimenta el lujo sin límites.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                     <!--<a href="#"><i class="fab fa-facebook-f"></i></a>-->
+                     <!--<a href="#"><i class="fab fa-tiktok"></i></a>-->
+                    <a href="https://wa.me/51923580692"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Precios</h4>
+                <p>📦 10 ml - S/ 30.00</p>
+                <p>📦 30 ml - S/ 85.00</p>
+                <p>🚚 Envíos a todo el Perú</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#hombre">Perfumes Hombre</a>
+                <a href="#mujer">Perfumes Mujer</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fab fa-whatsapp"></i> +51 923 580 692</p>
+                <p><i class="fab fa-instagram"></i> @deluxeperfumeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Deluxe Perfumería. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-receipt"></i> Mi Cotización</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Tu cotización está vacía</p>
+                <span>Agrega productos para comenzar</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>Productos:</span>
+                    <span id="totalItems">0</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Decants:</span>
+                    <span id="totalDecants">0 unidades</span>
+                </div>
+                <div class="cart-summary-row total">
+                    <span>Total:</span>
+                    <span class="amount" id="cartTotal">S/ 0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" onclick="sendWhatsApp()" disabled>
+                <i class="fab fa-whatsapp"></i> Enviar Cotización por WhatsApp
+            </button>
+            <button class="clear-cart-btn" onclick="clearCart()">
+                <i class="fas fa-trash"></i> Vaciar cotización
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i> <span id="toastMessage">Producto agregado</span>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/51923580692?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20sus%20decants" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
