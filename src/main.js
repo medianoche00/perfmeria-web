@@ -239,3 +239,12 @@ window.updateQuantity = updateQuantity;
 window.toggleNav = toggleNav;
 window.toggleCart = toggleCart;
 window.sendWhatsApp = sendWhatsApp;
+
+document.addEventListener("click", (e) => {
+
+   if(e.target.id === "clear-cart"){
+        clearCart();
+   }
+
+});
+
