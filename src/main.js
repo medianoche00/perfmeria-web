@@ -229,13 +229,6 @@ Vi que el perfume *${name}* de *${brand}* está agotado 😔
                 }
                 document.getElementById('mainNav').classList.remove('active');
             });
-                document.addEventListener("click", (e) => {
-
-   if(e.target.id === "clear-cart"){
-        clearCart();
-   }
-
-});
         });
 
         // Inicializar
@@ -246,6 +239,3 @@ window.updateQuantity = updateQuantity;
 window.toggleNav = toggleNav;
 window.toggleCart = toggleCart;
 window.sendWhatsApp = sendWhatsApp;
-
-
-
